@@ -1,0 +1,29 @@
+﻿@*https://chrissainty.com/a-detailed-look-at-data-binding-in-blazor/*@
+
+@page "/demo/index"
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <input @bind-value="Title1" />
+            <h3>@Title1</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <input @bind-value="Title2" @bind-value:event="oninput" />
+            <h3>@Title2</h3>
+        </div>
+    </div>
+</div>
+
+
+
+
+@code {
+
+    private string Title1 { get; set; }
+
+    private string Title2 { get; set; }
+
+}
