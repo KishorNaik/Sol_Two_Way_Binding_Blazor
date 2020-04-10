@@ -1,9 +1,30 @@
 ﻿@page "/demo/parent"
 
 
-    <ChildComponent @bind-ParentsTitle="Title" />
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 style="display:block; border:2px solid red">Parent Title is: @Title</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div style="border: 2px solid green">
+                    <ChildComponent @bind-ParentsTitle="Title" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12" style="border:2px solid red">
+                <button @onclick="UpdateTitle">Update Title</button>
+            </div>
+        </div>
 
-    <button @onclick="UpdateTitle">Update Title</button>
+    </div>
+
+
+  
+   
 
 @code {
 
@@ -11,7 +32,6 @@
 
     private async  Task UpdateTitle()
     {
-        
         await Task.Run(() => { 
         
             Title = "Hello, Blazor!";
