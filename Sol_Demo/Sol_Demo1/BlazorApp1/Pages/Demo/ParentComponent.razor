@@ -1,0 +1,21 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-6">
+
+            <ChildComponent 
+                            @bind-FirstName="this.CustomerM.FirstName"
+                            @bind-FirstName:event="FirstNameChanged"
+                           
+                            @bind-LastName="this.CustomerM.LastName"></ChildComponent>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+
+            <span>First Name:@this.CustomerM.FirstName</span>
+            <span>First Name:@this.CustomerM.LastName </span>
+
+            <button class="btn btn-danger" @onclick="this.OnSubmit">Submit</button>
+        </div>
+    </div>
+</div>
